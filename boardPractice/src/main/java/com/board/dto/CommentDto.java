@@ -1,6 +1,6 @@
 package com.board.dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import lombok.Data;
 
@@ -10,5 +10,5 @@ public class CommentDto {
 	private String boardNo;
 	private String userId;
 	private String content;
-	private LocalDateTime createdAt;
+	private Timestamp createdAt;
 }

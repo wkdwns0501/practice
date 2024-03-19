@@ -1,6 +1,6 @@
 package com.board.dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import lombok.Data;
 
@@ -9,5 +9,5 @@ public class LikeDto {
 	private int likeNo;
 	private int boardNo;
 	private String userId;
-	private LocalDateTime createdAt;
+	private Timestamp createdAt;
 }
