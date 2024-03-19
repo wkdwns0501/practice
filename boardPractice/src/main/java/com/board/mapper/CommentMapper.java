@@ -14,7 +14,7 @@ public class CommentMapper implements RowMapper<CommentDto>{
 	@Override
 	public CommentDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 		CommentDto commentDto = new CommentDto();
-		commentDto.setCommentId(rs.getInt("comment_id"));
+		commentDto.setCommentNo(rs.getInt("comment_no"));
 		commentDto.setBoardNo(rs.getString("board_no"));
 		commentDto.setUserId(rs.getString("user_id"));
 		commentDto.setContent(rs.getString("content"));
