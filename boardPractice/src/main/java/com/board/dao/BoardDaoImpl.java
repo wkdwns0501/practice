@@ -26,9 +26,9 @@ public class BoardDaoImpl implements BoardDao{
 
 	@Override
 	public void insert(BoardDto boardDto) {
-		String sql = "insert into board(board_no, user_id, title, content, created_at, updated_at) "
+		String sql = "insert into board(board_no, member_id, title, content, created_at, updated_at) "
 						+ "values (?, ?, ?, ?, ?, ?)";
-		Object[] data = {boardDto.getBoardNo(), boardDto.getUserId(), 
+		Object[] data = {boardDto.getBoardNo(), boardDto.getMemberId(), 
 								boardDto.getTitle(), boardDto.getContent(), 
 								boardDto.getCreatedAt(), boardDto.getUpdatedAt()};
 		jdbcTemplate.update(sql, data);

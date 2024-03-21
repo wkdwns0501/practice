@@ -10,12 +10,16 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class UserEntity {
+public class Member{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private int id;
-	 private String username;
-	 private String password;
-	 private String role;
+	 private String memberId;
+	 private String passwd;
+	 private String nickname;
+	 private String email;
+	 private String tel;
+	 private String status;
+	 private String sex;
+	 private String myLevel;
 }

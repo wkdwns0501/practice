@@ -6,15 +6,15 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.board.dto.UserDto;
+import com.board.dto.MemberDto;
 
 @Component
-public class UserMapper implements RowMapper<UserDto>{
+public class MemberMapper implements RowMapper<MemberDto>{
 
 	@Override
-	public UserDto mapRow(ResultSet rs, int rowNum) throws SQLException {
-		UserDto userDto = new UserDto();
-		userDto.setUserId(rs.getString("user_id"));
+	public MemberDto mapRow(ResultSet rs, int rowNum) throws SQLException {
+		MemberDto userDto = new MemberDto();
+		userDto.setMemberId(rs.getString("member_id"));
 		userDto.setPasswd(rs.getString("passwd"));
 		userDto.setNickname(rs.getString("nickname"));
 		userDto.setEmail(rs.getString("email"));

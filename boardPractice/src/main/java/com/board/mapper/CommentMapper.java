@@ -16,7 +16,7 @@ public class CommentMapper implements RowMapper<CommentDto>{
 		CommentDto commentDto = new CommentDto();
 		commentDto.setCommentNo(rs.getInt("comment_no"));
 		commentDto.setBoardNo(rs.getString("board_no"));
-		commentDto.setUserId(rs.getString("user_id"));
+		commentDto.setMemberId(rs.getString("member_id"));
 		commentDto.setContent(rs.getString("content"));
 		commentDto.setCreatedAt(rs.getTimestamp("created_at"));
 		return commentDto;

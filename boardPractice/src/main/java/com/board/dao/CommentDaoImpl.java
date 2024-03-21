@@ -26,8 +26,8 @@ public class CommentDaoImpl implements CommentDao{
 
 	@Override
 	public void insert(CommentDto commentDto) {
-		String sql = "insert into comment(comment_no, board_no, user_id, content, created_at) values(?, ?, ?, ?, ?)";
-		Object[] data = {commentDto.getCommentNo(), commentDto.getBoardNo(), commentDto.getUserId(), commentDto.getContent()};
+		String sql = "insert into comment(comment_no, board_no, member_id, content, created_at) values(?, ?, ?, ?, ?)";
+		Object[] data = {commentDto.getCommentNo(), commentDto.getBoardNo(), commentDto.getMemberId(), commentDto.getContent()};
 		jdbcTemplate.update(sql, data);
 	}
 

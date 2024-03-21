@@ -8,7 +8,7 @@ import lombok.Data;
 public class CommentDto {
 	private int commentNo;
 	private String boardNo;
-	private String userId;
+	private String memberId;
 	private String content;
 	private Timestamp createdAt;
 }
