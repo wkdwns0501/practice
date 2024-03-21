@@ -16,7 +16,7 @@ public class LikeMapper implements RowMapper<LikeDto>{
 		LikeDto likeDto = new LikeDto();
 		likeDto.setLikeNo(rs.getInt("like_no"));
 		likeDto.setBoardNo(rs.getInt("board_no"));
-		likeDto.setUserId(rs.getString("user_id"));
+		likeDto.setMemberId(rs.getString("member_id"));
 		likeDto.setCreatedAt(rs.getTimestamp("created_at"));
 		return likeDto;
 	}

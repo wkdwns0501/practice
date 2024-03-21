@@ -3,8 +3,8 @@ package com.board.dto;
 import lombok.Data;
 
 @Data
-public class UserDto {
-	private String userId;
+public class MemberDto {
+	private String memberId;
 	private String passwd;
 	private String nickname;
 	private String email;

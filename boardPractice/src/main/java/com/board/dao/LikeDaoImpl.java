@@ -26,15 +26,15 @@ public class LikeDaoImpl implements LikeDao{
 
 	@Override
 	public void insert(LikeDto likeDto) {
-		String sql = "insert into like(like_no, board_no, user_id) values (?, ?, ?)";
-		Object[] data = {likeDto.getLikeNo(), likeDto.getBoardNo(), likeDto.getUserId()};
+		String sql = "insert into like(like_no, board_no, member_id) values (?, ?, ?)";
+		Object[] data = {likeDto.getLikeNo(), likeDto.getBoardNo(), likeDto.getMemberId()};
 		jdbcTemplate.update(sql, data);
 	}
 
 	@Override
-	public List<LikeDto> selectList(String userId) {
-		String sql = "select * from like where userId = ?";
-		Object[] data = {userId};
+	public List<LikeDto> selectList(String memberId) {
+		String sql = "select * from like where member_id = ?";
+		Object[] data = {memberId};
 		return jdbcTemplate.query(sql, likeMapper, data);
 	}
 

@@ -8,6 +8,6 @@ import lombok.Data;
 public class LikeDto {
 	private int likeNo;
 	private int boardNo;
-	private String userId;
+	private String memberId;
 	private Timestamp createdAt;
 }

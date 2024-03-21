@@ -15,7 +15,7 @@ public class BoardMapper implements RowMapper<BoardDto>{
 	public BoardDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 		BoardDto boardDto = new BoardDto();
 		boardDto.setBoardNo(rs.getInt("board_no"));
-		boardDto.setUserId(rs.getString("user_id"));
+		boardDto.setMemberId(rs.getString("member_id"));
 		boardDto.setTitle(rs.getString("title"));
 		boardDto.setContent(rs.getString("content"));
 		boardDto.setCreatedAt(rs.getTimestamp("created_at"));

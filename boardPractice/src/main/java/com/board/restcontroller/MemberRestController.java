@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.board.dao.UserDao;
-import com.board.dto.UserDto;
+import com.board.dao.MemberDao;
+import com.board.dto.MemberDto;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -27,10 +27,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 @CrossOrigin
 @RestController
 @RequestMapping("/user")
-public class UserRestController {
+public class MemberRestController {
 	
 	@Autowired
-	private UserDao userDao;
+	private MemberDao memberDao;
 	
 	//등록 매핑에 대한 설명용 annotation
     @Operation(
@@ -55,20 +55,20 @@ public class UserRestController {
 			@Parameter(
 				description = "생성할 사용자 객체",
 				required = true,
-				schema = @Schema(implementation = UserDto.class)
+				schema = @Schema(implementation = MemberDto.class)
 			)
-			@RequestBody UserDto userDto) {
-		userDao.insert(userDto);
+			@RequestBody MemberDto memberDto) {
+    	memberDao.insert(memberDto);
 	}
     
     @Operation(
             description = "사용자 상세 조회"
        )
-    @GetMapping("userId/{userId}") //상세조회
-    public ResponseEntity<UserDto> find(@PathVariable String userId){
-    	UserDto userDto = userDao.selectOne(userId);
-    	if(userDto != null) {
-    		return ResponseEntity.ok().body(userDto);
+    @GetMapping("memberId/{memberId}") //상세조회
+    public ResponseEntity<MemberDto> find(@PathVariable String memberId){
+    	MemberDto memberDto = memberDao.selectOne(memberId);
+    	if(memberDto != null) {
+    		return ResponseEntity.ok().body(memberDto);
     	}
     	else {
     		return ResponseEntity.notFound().build();
@@ -86,7 +86,7 @@ public class UserRestController {
                               @Content(
                                     mediaType = "application/json",
                                     array = @ArraySchema(
-                                          schema = @Schema(implementation = UserDto.class)
+                                          schema = @Schema(implementation = MemberDto.class)
                                     )
                               )
                               
@@ -104,16 +104,16 @@ public class UserRestController {
             }
       )
     @GetMapping("/") //전체조회
-    public List<UserDto> list(){
-    	return userDao.selectList();
+    public List<MemberDto> list(){
+    	return memberDao.selectList();
     }
     
     @Operation(
         	description = "사용자 삭제"
         )
-    @DeleteMapping("/{userId}") //삭제
-    public void delete(@PathVariable String userId) {
-    	userDao.delete(userId);
+    @DeleteMapping("/{memberId}") //삭제
+    public void delete(@PathVariable String memberId) {
+    	memberDao.delete(memberId);
     }
     
     //수정 임시 보류
